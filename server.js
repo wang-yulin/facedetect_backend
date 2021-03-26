@@ -23,15 +23,7 @@ const db = knex({
 //     res.send(database.users)
 // })
 
-const userChecked = (email, password) => {
-    for(let i=0; i<database.users.length; i++){
-        if (email === database.users[i].email &&
-            password === database.users[i].password){
-                return database.users[i];
-            }
-    }
-    return false;
-}
+
 
 app.post('/signin', (req, res) => {
     const {email, password} = req.body;
