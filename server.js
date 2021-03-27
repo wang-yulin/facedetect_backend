@@ -29,6 +29,6 @@ app.post('/register', (res, req) => handleRegister(res, req, db, bcrypt))
 app.get('/profile/:id', (res, req) => handleProfile(res, req, db))
 app.put('/image', (res, req) => handleEntries(res, req, db))
 app.post('/image', (res, req) => handleAPI(res, req))
-app.listen(3000, ()=>{
-    console.log('app is running on port 3000');
+app.listen(process.env.PORT || 3000, ()=>{
+    console.log(`app is running on port ${process.env.PORT}`);
 })
