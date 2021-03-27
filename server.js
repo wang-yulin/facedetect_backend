@@ -1,11 +1,11 @@
 import express, { response } from 'express';
 import bcrypt from 'bcrypt-nodejs';
 import cors from 'cors';
-import knex from 'knex'
+import knex from 'knex';
 import handleRegister from './controller/register.js';
 import handleSignIn from './controller/singin.js';
 import handleProfile from './controller/profile.js';
-import handleEntries from './controller/image.js';
+import {handleAPI , handleEntries} from './controller/image.js';
 
 const app = express();
 
@@ -28,6 +28,7 @@ app.post('/signin', (res, req) => handleSignIn(res, req, db, bcrypt))
 app.post('/register', (res, req) => handleRegister(res, req, db, bcrypt))
 app.get('/profile/:id', (res, req) => handleProfile(res, req, db))
 app.put('/image', (res, req) => handleEntries(res, req, db))
+app.post('/image', (res, req) => handleAPI(res, req))
 app.listen(3000, ()=>{
     console.log('app is running on port 3000');
 })

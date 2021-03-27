@@ -1,3 +1,18 @@
+import Clarifai from 'clarifai';
+
+
+
+const app = new Clarifai.App({
+    apiKey: '9141438601714a39a5ff9cb7162fbc6e'
+   });
+
+const handleAPI = (req, res) => {
+    app.models
+    .predict(Clarifai.FACE_DETECT_MODEL,req.body.input)
+    .then(data => res.json(data))
+};
+
+
 const handleEntries = (req, res, db) => {
     const { id } = req.body;
     db('users').where('id', '=', id)
@@ -10,4 +25,4 @@ const handleEntries = (req, res, db) => {
     
 }
 
-export default handleEntries;
+export {handleAPI , handleEntries};
