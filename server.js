@@ -6,11 +6,13 @@ import handleRegister from './controller/register.js';
 import handleSignIn from './controller/singin.js';
 import handleProfile from './controller/profile.js';
 import {handleAPI , handleEntries} from './controller/image.js';
+import helmet from 'helmet';
 
 const app = express();
 
 app.use(express.json());
 app.use(cors());
+app.use(helmet.frameguard({ action: 'SAMEORIGIN' }));
 
 const db = knex({
     client: 'pg',
