@@ -15,8 +15,10 @@ app.use(cors());
 const db = knex({
     client: 'pg',
     connection: {
-        connectionString : process.env.DATABASE_URL,
-        ssl: { rejectUnauthorized: false }
+        host : 'pgm-2ze9xf228386n2q4167570.pg.rds.aliyuncs.com',
+        user : 'face_detection',
+        password : 'wang_500237',
+        database : 'face_detection'
       }
   });
 
