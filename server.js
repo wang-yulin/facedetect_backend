@@ -31,6 +31,6 @@ app.post('/register', (res, req) => handleRegister(res, req, db, bcrypt))
 app.get('/profile/:id', (res, req) => handleProfile(res, req, db))
 app.put('/image', (res, req) => handleEntries(res, req, db))
 app.post('/image', (res, req) => handleAPI(res, req))
-app.listen(3389, ()=>{
+app.listen(process.env.PORT || 8080, ()=>{
     console.log(`app is running`);
 })
