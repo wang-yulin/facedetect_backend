@@ -17,10 +17,10 @@ app.use(cors());
 const db = knex({
     client: 'pg',
     connection: {
-        host : 'pgm-2ze9xf228386n2q4167570.pg.rds.aliyuncs.com',
-        user : 'face_detection',
+        host : '127.0.0.1',
+        user : 'postgres',
         password : 'wang_500237',
-        database : 'face_detection'
+        database : 'smart_brain'
       },
       pool: {
         min: 2,
