@@ -6,20 +6,17 @@ import handleRegister from './controller/register.js';
 import handleSignIn from './controller/singin.js';
 import handleProfile from './controller/profile.js';
 import {handleAPI , handleEntries} from './controller/image.js';
+import morgan from 'morgan';
 
 const app = express();
 
+app.use(morgan("combined"));
 app.use(express.json());
 app.use(cors());
 
 const db = knex({
     client: 'pg',
-    connection: {
-        host : '182.92.74.231',
-        user : 'postgres',
-        password : 'wang_500237',
-        database : 'smart_brain'
-      },
+    connection: process.env.POSTGRES_URI
   });
 
 
