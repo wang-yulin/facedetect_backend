@@ -22,7 +22,6 @@ services:
       POSTGRES_USER: bob
       POSTGRES_PASSWORD: secret
       POSTGRES_DB: smart-brain-docker
-      POSTGRES_HOST: postgres
     build: ./postgres
     ports: 
       - "5431:5432"
