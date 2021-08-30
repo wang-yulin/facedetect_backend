@@ -20,7 +20,7 @@ const handleProfileUpdate = (req, res, db) => {
             if (resp) {
                 res.json("success")
             } else {
-                res.status(400).json("Unable to update")
+                res.status(400).json("Unable to update the profile")
             }
         })
         .catch(err => res.status(400).json('error updating user profile'))
