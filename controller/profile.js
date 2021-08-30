@@ -5,7 +5,7 @@ const handleProfile = (req, res, db) => {
             if(user.length){
                 res.json(user[0]);
             } else {
-                res.status(400).json('Not found')
+                res.status(400).json('Not found the user')
                 }
         })
 }
